@@ -31,8 +31,13 @@ public class PlaceService {
         if(placeOptional.isPresent()) {
             Place place = placeOptional.get();
             place.setRating((place.getRating() * place.getRatesAmount() + rating) / (place.getRatesAmount() + 1));
-            place = placeRepository.updatePlaceRating(place);
-            return place;
+            place.setRatesAmount(place.getRatesAmount() + 1);
+            int amount = placeRepository.updatePlaceRating(place.getRating(), place.getRatesAmount(), place.getId());
+            if(amount == 1) {
+                return place;
+            } else { //TODO decide what to do if changed amount is more than 1
+                return null;
+            }
         } else {
             return null;
         }

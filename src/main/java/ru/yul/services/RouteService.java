@@ -29,7 +29,12 @@ public class RouteService {
             Route route = routeOptional.get();
             route.setRating((route.getRating() * route.getRatesAmount() + rating) / (route.getRatesAmount() + 1));
             route.setRatesAmount(route.getRatesAmount() + 1);
-            return routeRepository.updateRouteRating(route);
+            int changedAmount = routeRepository.updateRouteRating(route.getRating(), route.getRatesAmount(), route.getId());
+            if(changedAmount == 1) {
+                return route;
+            } else { //TODO decide what to do if amount is more than 1
+                return null;
+            }
         } else {
             return null;
         }
@@ -40,6 +45,6 @@ public class RouteService {
     }
 
     public Route getById(Long id) {
-        return routeRepository.findById(id).get();
+        return routeRepository.findById(id).orElse(null);
     }
 }

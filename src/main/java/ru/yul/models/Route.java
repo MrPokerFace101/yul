@@ -23,5 +23,5 @@ public class Route {
     private Long ratesAmount;
 
     @ManyToMany
-    private List<Place> route;
+    private List<Place> placeList;
 }

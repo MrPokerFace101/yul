@@ -21,7 +21,7 @@ public class RouteDto {
         return Route.builder()
                 .name(name)
                 .description(description)
-                .route(places)
+                .placeList(places)
                 .build();
     }
 }

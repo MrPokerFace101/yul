@@ -34,6 +34,8 @@ public class ShopService {
     }
 
     public ShopBranch getBranch(Long shopId, Long branchId) {
-        return shopBranchRepository.findByShopIdAndBranchId(shopId, branchId);
+//        return shopBranchRepository.findByShopIdAndBranchId(shopId, branchId);
+//        TODO fix
+        return null;
     }
 }
