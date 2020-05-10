@@ -42,4 +42,8 @@ public class PlaceService {
             return null;
         }
     }
+
+    public Place findByCoordinates(Double x, Double y) {
+        return placeRepository.findByXAndY(x, y);
+    }
 }

@@ -18,4 +18,6 @@ public interface PlaceRepository extends CrudRepository<Place, Long> {
     @Modifying
     @Query(nativeQuery = true, value = "update place set place.rating = :placeRating, place.ratesAmount = :ratesAmount where place.id = :placeId")
     int updatePlaceRating(@Param("placeRating") Double placeRating, @Param("ratesAmount") Long ratesAmount, @Param("placeId") Long placeId);
+
+    Place findByXAndY(Double x, Double y);
 }

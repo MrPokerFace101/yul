@@ -22,5 +22,8 @@ public class User {
     private List<Place> visitedPlaces;
 
     @ManyToMany
+    private List<Route> visitedRoutes;
+
+    @ManyToMany
     private List<Route> savedRoutes;
 }
