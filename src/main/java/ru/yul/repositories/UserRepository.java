@@ -11,6 +11,6 @@ public interface UserRepository extends CrudRepository<User, Long> {
     @Query(nativeQuery = true, value = "select * from \"user\" where deviceid = :deviceId")
     User findByDeviceId(String deviceId);
 
-    @Query(nativeQuery = true, value = "insert into \"user\" (id, deviceid) values (:id, :deviceId)")
-    User save(Long id, String deviceId);
+    @Query(nativeQuery = true, value = "insert into \"user\" (id, name, deviceid) values (:id, :name, :deviceId)")
+    User save(Long id, String name, String deviceId);
 }

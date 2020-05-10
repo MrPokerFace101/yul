@@ -16,6 +16,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_pkey")
     private Long id;
+    private String name;
     private String deviceId;
 
     @ManyToMany

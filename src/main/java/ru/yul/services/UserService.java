@@ -12,7 +12,7 @@ public class UserService {
     private UserRepository userRepository;
 
     public User saveUser(User user) {
-        return userRepository.save(user.getId(), user.getDeviceId());
+        return userRepository.save(user.getId(), user.getName(), user.getDeviceId());
     }
 
     public User getUserByDeviceId(String deviceId) {
