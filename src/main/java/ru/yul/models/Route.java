@@ -14,7 +14,8 @@ import java.util.List;
 public class Route {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "route_pkey_inc")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "route_pkey_generator")
+    @SequenceGenerator(name="route_pkey_generator", sequenceName = "route_pkey_inc", allocationSize = 1)
     private Long id;
 
     private String name;

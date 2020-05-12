@@ -2,10 +2,7 @@ package ru.yul.models;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 @AllArgsConstructor
@@ -16,7 +13,8 @@ import javax.persistence.Id;
 public class Place {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "place_pkey_inc")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "place_pkey_generator")
+    @SequenceGenerator(name="place_pkey_generator", sequenceName = "place_pkey_inc", allocationSize = 1)
     private Long id;
 
     private String name;
