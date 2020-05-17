@@ -11,7 +11,7 @@ public interface CityRepository extends CrudRepository<City, Long> {
 
     City findByName(String name);
 
-    @Query(nativeQuery = true, value = "select id from city where name = :name")
+    @Query("select c.id from City c where c.name = :name")
     Long findIdByName(@Param("name") String name);
 
     @Query(nativeQuery = true, value = "insert into city_places (city_id, places_id) values (:cityId, :placeId)")

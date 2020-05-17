@@ -4,16 +4,15 @@ import lombok.*;
 import ru.yul.models.Place;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
-@Setter
 @Getter
+@Setter
 public class PlaceDto {
 
-    private String name;
-    private String description;
-    private Double x;
-    private Double y;
+    private final String name;
+    private final String description;
+    private final Double x;
+    private final Double y;
 
     public Place toPlace() {
         return Place.builder()

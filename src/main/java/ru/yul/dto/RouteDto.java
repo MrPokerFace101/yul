@@ -7,15 +7,14 @@ import ru.yul.models.Route;
 import java.util.List;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 @Getter
 @Setter
 public class RouteDto {
 
-    private String name;
-    private String description;
-    private List<Place> places;
+    private final String name;
+    private final String description;
+    private final List<Place> places;
 
     public Route toRoute() {
         return Route.builder()

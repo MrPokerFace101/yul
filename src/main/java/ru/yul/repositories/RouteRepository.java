@@ -13,7 +13,7 @@ import java.util.List;
 public interface RouteRepository extends CrudRepository<Route, Long> {
 
     @Modifying
-    @Query(nativeQuery = true, value = "update route set route.rating = :routeRating, route.rates_amount = :ratesAmount where route.id = :routeId")
+    @Query("update Route r set r.rating = :routeRating, r.ratesAmount = :ratesAmount where r.id = :routeId")
     int updateRouteRating(@Param("routeRating") Double routeRating, @Param("ratesAmount") Long ratesAmount, @Param("routeId") Long routeId);
 
     @Query("from Route order by rating desc")

@@ -23,9 +23,9 @@ public class PlaceController {
     private CityService cityService;
 
     @GetMapping("/api/{city}/places")
-    public ResponseEntity<List<Place>> getPlacesByCity(@PathVariable String city) {
+    public ResponseEntity<List<XYPlaceDto>> getPlacesByCity(@PathVariable String city) {
         log.debug("getPlacesByCity(); city={}", city);
-        List<Place> places = placeService.getPlacesCoordinatesByCity(city);
+        List<XYPlaceDto> places = placeService.getPlacesCoordinatesByCity(city);
         if (places.isEmpty()) {
             log.error("getPlacesByCity; places is empty; 404 response code sent");
             return ResponseEntity.notFound().build();

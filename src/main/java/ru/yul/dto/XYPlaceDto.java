@@ -3,12 +3,12 @@ package ru.yul.dto;
 import lombok.*;
 
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 @Getter
 @Setter
+@EqualsAndHashCode
 public class XYPlaceDto {
 
-    private Double x;
-    private Double y;
+    private final Double x;
+    private final Double y;
 }

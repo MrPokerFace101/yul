@@ -3,6 +3,7 @@ package ru.yul.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ru.yul.dto.PlaceDto;
+import ru.yul.dto.XYPlaceDto;
 import ru.yul.models.Place;
 import ru.yul.repositories.PlaceRepository;
 
@@ -15,7 +16,7 @@ public class PlaceService {
     @Autowired
     private PlaceRepository placeRepository;
 
-    public List<Place> getPlacesCoordinatesByCity(String city) {
+    public List<XYPlaceDto> getPlacesCoordinatesByCity(String city) {
         return placeRepository.findPlacesCoordinatesByCity(city);
     }
 
