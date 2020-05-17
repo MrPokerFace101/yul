@@ -24,4 +24,12 @@ public class CityService {
     public City getByName(String city) {
         return cityRepository.findByName(city);
     }
+
+    public void addPlaceToCityList(String city, Long placeId) {
+        cityRepository.addPlaceToCityList(cityRepository.findIdByName(city), placeId);
+    }
+
+    public void addRouteToCityList(String city, Long routeId) {
+        cityRepository.addRouteToCityList(cityRepository.findIdByName(city), routeId);
+    }
 }

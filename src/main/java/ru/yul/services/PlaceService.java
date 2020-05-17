@@ -15,8 +15,8 @@ public class PlaceService {
     @Autowired
     private PlaceRepository placeRepository;
 
-    public List<Place> getPlacesByCity(String city) {
-        return placeRepository.findByCity(city);
+    public List<Place> getPlacesCoordinatesByCity(String city) {
+        return placeRepository.findPlacesCoordinatesByCity(city);
     }
 
     public Place save(PlaceDto placeDto) {
@@ -43,7 +43,7 @@ public class PlaceService {
         }
     }
 
-    public Place findByCoordinates(Double x, Double y) {
+    public Optional<Place> findByCoordinates(Double x, Double y) {
         return placeRepository.findByXAndY(x, y);
     }
 }
